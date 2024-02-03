@@ -14,7 +14,6 @@ export function internalNftTokensForOwner({
   fromIndex?: number;
   limit?: number;
 }): JsonToken[] {
-  near.log("AccountId: " + accountId);
   const tokenVector = contract.tokensByOwner.get(accountId);
 
   if (tokenVector === null) {
@@ -25,11 +24,11 @@ export function internalNftTokensForOwner({
   let start = fromIndex ? fromIndex : 0;
   let max = limit ? limit : 50;
 
-  for (let i = start; i < max; i++) {
+  for (let i = start; i < start + max; i++) {
     if (i >= 0 && i < tokenVector.length) {
       let token = internalJsonTokenForTokenId({
         contract,
-        tokenId: tokenVector.get(i),
+        tokenId: tokenVector[i],
       });
       tokens.push(token);
     }
@@ -37,3 +36,15 @@ export function internalNftTokensForOwner({
 
   return tokens;
 }
+
+// export function internalNftTokens({
+//   contract,
+//   fromIndex,
+//   limit,
+// }: {
+//   contract: Contract;
+//   fromIndex?: number;
+//   limit?: number;
+// }): JsonToken[] {
+//   let tokenVector = contract.token;
+// }

@@ -20,6 +20,7 @@ import {
 } from "./metadata";
 import { internalMint } from "./mint";
 import { internalNftTokensForOwner } from "./token";
+import { internalMakeBid } from "./auction";
 
 @NearBindgen({})
 export class Contract {
@@ -85,6 +86,14 @@ export class Contract {
       accountId: account_id,
       fromIndex: from_index,
       limit,
+    });
+  }
+
+  @call({ payableFunction: true })
+  make_bid({ auction_id }: { auction_id: string }) {
+    return internalMakeBid({
+      contract: this,
+      auctionId: auction_id,
     });
   }
 }

@@ -29,7 +29,7 @@ export function refundDeposit(storageUsed: bigint) {
 
   //if the refund is greater than 1 yocto NEAR, we refund the predecessor that amount
   if (refund > 1) {
-    // Send the money to the beneficiary (TODO: don't use batch actions)
+    // Send the money to the beneficiary
     const promise = near.promiseBatchCreate(near.predecessorAccountId());
     near.promiseBatchActionTransfer(promise, refund);
   }

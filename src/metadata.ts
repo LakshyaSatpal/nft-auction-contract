@@ -133,13 +133,13 @@ export class JsonToken {
 export class NFTAuctionMetadata {
   title?: string;
   description?: string;
-  interval: number; // For How much time does the nft seller want the auction to continue
-  minPrice: number; // The price of the nft  at which the auction will start
-  startTime: number; // Timestamp at which the auction will start
+  interval: bigint; // For How much time does the nft seller want the auction to continue
+  minPrice: bigint; // The price of the nft  at which the auction will start
+  startTime: bigint; // Timestamp at which the auction will start
   auctionStarted: boolean;
   bidders: AccountId[]; // A collection of all the accounts who have bidded for the nft
-  bidsByAccount: LookupMap<number>; // A mapping of all the addresses to their bid , so we can return their amount in case their bid did not win nft
-  currentHighestBid?: number;
+  bidsByAccount: LookupMap<bigint>; // A mapping of all the addresses to their bid , so we can return their amount in case their bid did not win nft
+  currentHighestBid?: bigint;
   currentWinner?: AccountId;
 
   constructor({
@@ -152,9 +152,9 @@ export class NFTAuctionMetadata {
   }: {
     title?: string;
     description?: string;
-    interval: number;
-    minPrice: number;
-    startTime: number;
+    interval: bigint;
+    minPrice: bigint;
+    startTime: bigint;
     auctionStarted: boolean;
   }) {
     this.title = title;
