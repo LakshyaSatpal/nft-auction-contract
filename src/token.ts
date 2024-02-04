@@ -1,4 +1,4 @@
-import { AccountId, near } from "near-sdk-js";
+import { AccountId } from "near-sdk-js";
 import { Contract } from "./contract";
 import { JsonToken } from "./metadata";
 import { internalJsonTokenForTokenId } from "./internal";
