@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is an NFT (Non-Fungible Token) auction application built on the NEAR Protocol using `near-sdk-js`. The application allows users to mint NFTs, view their NFT collection, and participate in NFT auctions by placing bids.
+This project is an NFT (Non-Fungible Token) auction application built on the NEAR Protocol using `near-sdk-js`. The application allows users to mint NFTs, view their NFT collection, and participate in NFT auctions by placing bids. Here is the [Video Demo](https://youtu.be/C4cxUXJZeiU)
 
 ## Contract Functions
 
