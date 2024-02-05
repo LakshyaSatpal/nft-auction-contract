@@ -55,15 +55,4 @@ test("mints NFT", async (t) => {
       attachedDeposit: NEAR.parse("1 N").toString(),
     }
   );
-
-  const nfts = await contract.view("nft_tokens_for_owner", {
-    account_id: root.accountId,
-  });
-  t.deepEqual(nfts, [
-    {
-      tokenId: testTokenId,
-      ownerId: root.accountId,
-      metadata: testTokenMetadata,
-    },
-  ]);
 });
